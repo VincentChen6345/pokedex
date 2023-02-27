@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kanto PokeDex</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <script src="script.js"></script>
+    <div class="main-container">
+      <select name="pokemon" id="select">
+        <option value="1. Bulbasaur">1. Bulbasaur</option>
+        <option value="2. Ivysaur">2. Ivysaur</option>
+      </select>
+      <div class="sprite-container">
+        <img src="./img/1.png" alt="sprite" />
+      </div>
+
+      <div class="description-container">
+        <h1 class="name">Bulbasaur</h1>
+        <span> grass poison</span>
+        <p class="text">
+          A strange seed was planted on its back at birth. The plant sprouts and
+          grows with this Pokemon
+        </p>
+        <h3>Base Stats</h3>
+        <div class="stats-container">
+          <span id="HP">HP: 45</span>
+          <span id="ATK">ATK: 49</span>
+          <span id="DEF">DEF: 49</span>
+          <span id="SP-ATK">SP ATK: 65</span>
+          <span id="SP-DEF">SP DEF: 65</span>
+          <span id="SPE">SPE: 45</span>
+        </div>
+      </div>
+      <span>
+        <button id="previous">Previous</button>
+        <button id="next">Next</button>
+      </span>
+    </div>
+  </body>
+</html>
