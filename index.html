@@ -8,22 +8,25 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <script src="script.js"></script>
     <div class="main-container">
-      <select name="pokemon" id="select">
-        <option value="1. Bulbasaur">1. Bulbasaur</option>
-        <option value="2. Ivysaur">2. Ivysaur</option>
-      </select>
+      <div class="dropdown-container" id="dropdown-container">
+        <select name="pokemon-list" id="pokemon-list"></select>
+        <span class="dropdown_arrow"></span>
+      </div>
+
       <div class="sprite-container">
-        <img src="./img/1.png" alt="sprite" />
+        <img id="sprite-image" src="./img/1.png" alt="sprite" />
       </div>
 
       <div class="description-container">
         <h1 class="name">Bulbasaur</h1>
-        <span> grass poison</span>
+        <div class="type-container">
+          <span class="type grass">grass </span>
+          <span class="type poison"> poison</span>
+        </div>
         <p class="text">
           A strange seed was planted on its back at birth. The plant sprouts and
-          grows with this Pokemon
+          grows with this Pokemon.
         </p>
         <h3>Base Stats</h3>
         <div class="stats-container">
@@ -40,5 +43,6 @@
         <button id="next">Next</button>
       </span>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
