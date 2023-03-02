@@ -8,23 +8,27 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="main-container">
+    <div class="main-container" id="main-container">
       <div class="dropdown-container" id="dropdown-container">
         <select name="pokemon-list" id="pokemon-list"></select>
         <span class="dropdown_arrow"></span>
       </div>
 
       <div class="sprite-container">
-        <img id="sprite-image" src="./img/1.png" alt="sprite" />
+        <img
+          id="sprite-image"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+          alt="sprite"
+        />
       </div>
 
       <div class="description-container">
-        <h1 class="name">Bulbasaur</h1>
-        <div class="type-container">
+        <h1 class="name" id="name">#1 Bulbasaur</h1>
+        <div class="type-container" id="type-container">
           <span class="type grass">grass </span>
           <span class="type poison"> poison</span>
         </div>
-        <p class="text">
+        <p class="text" id="dex-entry">
           A strange seed was planted on its back at birth. The plant sprouts and
           grows with this Pokemon.
         </p>
