@@ -20,7 +20,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 724px;
+  height: 750px;
   border: 2px solid black;
 }
 .dropdown-container {
