@@ -86,7 +86,7 @@ const updatePkmName = async (value) => {
   let name = `#${dexNumber} ${value}`;
   pkmName.textContent = name;
   if (name.length > 12) {
-    pkmName.style.fontSize = `35px`;
+    pkmName.style.fontSize = `30px`;
   } else {
     pkmName.style.fontSize = `40px`;
   }
