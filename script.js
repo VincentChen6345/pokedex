@@ -92,7 +92,7 @@ const updatePkmName = async (value) => {
   //.selectedOptions property is a read-only collection that contains all the 'option' elements in a select element. select.selectedOptions[0] is used to retrieve the currently selected 'options' element. '[0]' is used to access the first element in the selectedOptions collection which is the only element when 'select' element has a single collection
   let name = `#${dexNumber} ${value}`;
   pkmName.textContent = name;
-  if (name.length > 11) {
+  if (name.length > 10) {
     pkmName.style.fontSize = `30px`;
   } else {
     pkmName.style.fontSize = `40px`;
@@ -209,10 +209,8 @@ nextBTN.addEventListener("click", nextOption);
 const disableButtons = () => {
   nextBTN.disabled = true;
   previousBTN.disabled = true;
-  console.log("disabled");
 };
 const activateButtons = () => {
   nextBTN.disabled = false;
   previousBTN.disabled = false;
-  console.log("enabled");
 };
