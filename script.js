@@ -73,10 +73,17 @@ const getPokemonList = async () => {
 getPokemonList();
 
 //dynamically set the src attribute for the sprite image
-const updateSpriteImg = (number) => {
+const updateSpriteImg = async (number) => {
   spriteImg.src = `
   https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iii/firered-leafgreen/${number}.png
   `;
+  await new Promise((resolve) => {
+    spriteImg.onload = resolve;
+  });
+  activateButtons();
+  //the executor function takes a single argument resolve, which is a function that is called when the Promise is resolved. The resolve function is assigned as the onload event handler for the spriteImg element. This means that the resolve function will be called once the image has finished loading.
+
+  //The await keyword is used to wait for the Promise to resolve before executing the next line of code. When the Promise is resolved (i.e., when the resolve function is called), the Promise resolves with the argument passed to the resolve function, which in this case is the event object associated with the onload event. This allows you to handle the completion of the image loading before moving on to the next step, which in this case is calling the activateButtons() function.
 };
 
 //update pokemon name
@@ -158,11 +165,12 @@ const getStats = async (number) => {
 
 // select onChange functionality to trigger UI updates
 const onSelectChange = () => {
+  disableButtons();
   updatePkmName(select.value);
-  updateSpriteImg(dexNumber);
   getPkmType(dexNumber);
   getDexEntry(dexNumber);
   getStats(dexNumber);
+  updateSpriteImg(dexNumber);
 };
 select.addEventListener("change", onSelectChange);
 
@@ -197,3 +205,14 @@ const nextOption = () => {
 // nextBTN.addEventListener("click", ());
 previousBTN.addEventListener("click", prevOption);
 nextBTN.addEventListener("click", nextOption);
+
+const disableButtons = () => {
+  nextBTN.disabled = true;
+  previousBTN.disabled = true;
+  console.log("disabled");
+};
+const activateButtons = () => {
+  nextBTN.disabled = false;
+  previousBTN.disabled = false;
+  console.log("enabled");
+};
