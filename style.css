@@ -128,3 +128,19 @@ button:hover {
   height: 50px;
   appearance: none;
 }
+
+.shiny-button {
+  position: absolute;
+  bottom: 0;
+  right: -30%;
+  background-color: white;
+  width: 50px;
+  height: 40px;
+  border-radius: 20px;
+  box-shadow: 1px 2px 5px rgb(160, 160, 160);
+  cursor: pointer;
+}
+.star-svg {
+  width: 30px;
+  height: 30px;
+}

@@ -2,7 +2,7 @@ let pokemonList = [];
 let dexNumber;
 let spriteURL;
 let pkmTypes = [];
-
+let shinyMode = false;
 const typeColours = {
   normal: `rgb(158, 158, 109)`,
   fighting: "rgb(184, 42, 36)",
@@ -38,7 +38,7 @@ const spe = document.getElementById("SPE");
 const mainContainer = document.getElementById("main-container");
 const nextBTN = document.getElementById("next");
 const previousBTN = document.getElementById("previous");
-
+const shinyBTN = document.getElementById("shiny-button");
 /////////////////////
 //create new option element
 const createOptionEl = (name, number) => {
@@ -74,9 +74,12 @@ getPokemonList();
 
 //dynamically set the src attribute for the sprite image
 const updateSpriteImg = async (number) => {
-  spriteImg.src = `
+  spriteImg.src =
+    shinyMode === false
+      ? `
   https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iii/firered-leafgreen/${number}.png
-  `;
+  `
+      : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iii/firered-leafgreen/shiny/${number}.png`;
   await new Promise((resolve) => {
     spriteImg.onload = resolve;
   });
@@ -214,3 +217,13 @@ const activateButtons = () => {
   nextBTN.disabled = false;
   previousBTN.disabled = false;
 };
+
+const shinyFn = () => {
+  shinyMode = shinyMode === true ? false : true;
+  shinyBTN.style.backgroundColor =
+    shinyMode === true ? "rgb(246, 255, 0)" : "white";
+  dexNumber = select.selectedOptions[0].getAttribute("number");
+  updateSpriteImg(dexNumber);
+};
+
+shinyBTN.addEventListener("click", shinyFn);
